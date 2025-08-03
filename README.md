@@ -2,6 +2,59 @@
  * @Author: Mr.Car
  * @Date: 2025-07-10 08:52:43
 -->
+## [2.0.3] - 2025-08-04
+smart contract
+```Bash
+(base) ➜  webapp git:(main) ✗ node eip7702-multicall-correct.js
+[dotenv@17.2.1] injecting env (2) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+🚀 启动 EIP-7702 Multicall 脚本（正确版本）...
+👤 使用 EOA: 0xE991bC71A371055B3f02aa79b79E4b714A3D04c0
+🌐 网络: Sepolia (Chain ID: 11155111)
+📍 代理合约: 0xfb21b334a6c1c554bd36749255af15c96301a90f
+
+📊 检查账户状态...
+💰 ETH 余额: 2.2375309088657676 ETH
+🪙 代币余额: 44 代币
+🔓 当前授权额度: 1 代币
+🏦 TokenBank 余额: 31 代币
+
+📝 准备 Multicall 数据...
+💾 存款金额: 0.01 代币
+📋 调用列表:
+  1. Token.approve(TokenBank, 0.01)
+  2. TokenBank.deposit(0.01)
+
+🔐 执行 EIP-7702 流程...
+🔍 检查网络支持...
+📦 最新区块号: 8906423
+🔍 验证合约部署...
+✅ DelegateMulticall 合约已部署，代码长度: 3688 字节
+🔐 步骤 1: 创建授权签名...
+✅ 授权签名完成
+   - 合约地址: 0xfb21b334a6c1c554bd36749255af15c96301a90f
+   - Nonce: 95
+   - Chain ID: 11155111
+   - yParity: 0
+   - r: 0x422bf35ab613b9ba9309d43d0c909402d51061d556e6bd100f2f81f04f2d80bf
+   - s: 0x13cf0523cd0bdd3f247889f3565e8b181523d8809e513126fa2a9b22e6b176bd
+🚀 步骤 2: 在 EOA 上调用 multicall...
+✅ 交易已发送: 0xd4862c2fabf40a2f962eb8f9d3b581e56b702e091cd7922629b47d1bd0130417
+🔗 查看交易: https://sepolia.etherscan.io/tx/0xd4862c2fabf40a2f962eb8f9d3b581e56b702e091cd7922629b47d1bd0130417
+
+⏳ 等待交易确认...
+✅ 交易确认成功!
+📊 Gas 使用量: 76904
+💸 Gas 费用: 1.1716170592e-7 ETH
+
+🔍 验证操作结果...
+📊 操作后状态:
+🪙 代币余额: 43.99 代币 (变化: -0.01)
+🏦 TokenBank 余额: 31.01 代币 (变化: 0.01)
+🔓 授权额度: 0 代币
+🎉 EIP-7702 Multicall 成功完成!
+💡 EOA 账户临时获得了智能合约的能力，完成了批量操作
+```
+
 ## [2.0.2] - 2025-07-31
 升级`bank`合约为`bankLinkTable`, 
 1. 使用离线计算和链表维护存储金额前10排序;
