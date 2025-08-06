@@ -2,6 +2,99 @@
  * @Author: Mr.Car
  * @Date: 2025-07-10 08:52:43
 -->
+## [2.0.4] - 2025-08-06
+chainlink 预言机自动转账：autoBank 合约地址
+```Bash
+(base) ➜  contracts git:(main) ✗ forge script script/deployAutoBank.s.sol :DeployAutoBank --account NFT --verify --broadcast 
+[⠊] Compiling...
+[⠒] Compiling 46 files with Solc 0.8.30
+[⠘] Solc 0.8.30 finished in 1.56s
+Compiler run successful with warnings:
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+  --> src/autoBank.sol:72:28:
+   |
+72 |     function performUpkeep(bytes calldata performData) external override {
+   |                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Warning: Detected artifacts built from source files that no longer exist. Run `forge clean` to make sure builds are in sync with project files.
+ - /Users/car/Work/2025beginAgain/contract_bank/packages/contracts/script/eip7702Simulator.sol
+Enter keystore password:
+Script ran successfully.
+Gas used: 856807
+
+== Logs ==
+  AutoBank deployed to: 0xe45f40DcA6063c7D23Ca744F489B174b6fA84961
+  Threshold set to: 100000000000000000
+  Owner: 0xE991bC71A371055B3f02aa79b79E4b714A3D04c0
+
+If you wish to simulate on-chain transactions pass a RPC URL.
+(base) ➜  contracts git:(main) ✗ forge script script/deployAutoBank.s.sol :DeployAutoBank --account NFT --verify --broadcast --rpc-url $SEPOLIA_RPC 
+[⠊] Compiling...
+No files changed, compilation skipped
+Enter keystore password:
+Script ran successfully.
+
+== Logs ==
+  AutoBank deployed to: 0xe1F1Ff12E1232E63648Fb8c6a0E6dA8Ec87e2Ff8
+  Threshold set to: 100000000000000000
+  Owner: 0xE991bC71A371055B3f02aa79b79E4b714A3D04c0
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 11155111
+
+Estimated gas price: 0.001012134 gwei
+
+Estimated total gas used for script: 1177628
+
+Estimated amount required: 0.000001191917338152 ETH
+
+==========================
+
+##### sepolia
+✅  [Success] Hash: 0xee0241ec12d67fed5bdcbda31a941279234d4cc6f87962bde092b0d277f8dea8
+Contract Address: 0xe1F1Ff12E1232E63648Fb8c6a0E6dA8Ec87e2Ff8
+Block: 8924142
+Paid: 0.000000916859802312 ETH (905868 gas * 0.001012134 gwei)
+
+✅ Sequence #1 on sepolia | Total Paid: 0.000000916859802312 ETH (905868 gas * avg 0.001012134 gwei)
+                                                                           
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+##
+Start verification for (1) contracts
+Start verifying contract `0xe1F1Ff12E1232E63648Fb8c6a0E6dA8Ec87e2Ff8` deployed on sepolia
+EVM version: cancun
+Compiler version: 0.8.30
+Constructor args: 000000000000000000000000000000000000000000000000016345785d8a0000
+
+Submitting verification for [src/autoBank.sol:AutoBank] 0xe1F1Ff12E1232E63648Fb8c6a0E6dA8Ec87e2Ff8.
+Warning: Could not detect the deployment.; waiting 5 seconds before trying again (4 tries remaining)
+
+Submitting verification for [src/autoBank.sol:AutoBank] 0xe1F1Ff12E1232E63648Fb8c6a0E6dA8Ec87e2Ff8.
+Submitted contract for verification:
+        Response: `OK`
+        GUID: `pixmlbpab3ykhx757phvkpak1rc6g7qpl7n4hew9fiupve6q95`
+        URL: https://sepolia.etherscan.io/address/0xe1f1ff12e1232e63648fb8c6a0e6da8ec87e2ff8
+Contract verification status:
+Response: `NOTOK`
+Details: `Pending in queue`
+Warning: Verification is still pending...; waiting 15 seconds before trying again (7 tries remaining)
+Contract verification status:
+Response: `OK`
+Details: `Pass - Verified`
+Contract successfully verified
+All (1) contracts were verified!
+
+Transactions saved to: /Users/car/Work/2025beginAgain/contract_bank/broadcast/deployAutoBank.s.sol/11155111/run-latest.json
+
+Sensitive values saved to: /Users/car/Work/2025beginAgain/contract_bank/cache/deployAutoBank.s.sol/11155111/run-latest.json
+```
+
 ## [2.0.3] - 2025-08-04
 smart contract
 ```Bash
